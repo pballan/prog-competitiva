@@ -1,0 +1,13 @@
+la función recursiva puede ser:
+pb(n,k) = #formas de poner K alfiles en las columnas 
+n, n-2, n-4, ...., {0,1} donde m es 0 o 1 
+
+
+La idea es dar vuelta el tablero y que sea un "rombo" y luego doblarlo simétricamente y queda un triangulo
+
+función recursiva:
+
+pb(k,n) = 1      n<0, k=0
+pb(k,n) = 0      k>n y k<0
+pb(k,n) = pb(k,n-2) + 2*pb(k-1,n-2)*(n+1-k+1) + 2*pb(k-2,n-2)*(n+1-k+2)  // es *2 porque puedo ponerlo en uno de ambos lados
+//y el (n+1-k+1) es para 
